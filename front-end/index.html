@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="src/styles/output.css" rel="stylesheet" />
+    <title>Form Validation</title>
+  </head>
+  <body>
+    <div
+      id="form-page"
+      class="flex justify-center items-center min-h-screen bg-gradient-to-br from-purple-100 via-pink-100 to-white p-2 sm:p-0"
+    >
+      <!-- REGISTRATION FORM -->
+      <form
+        id="registration-form"
+        class="auth-form hidden-element max-w-lg w-full shadow-2xl bg-white/90 border-0 sm:border-4 sm:bg-purple-300/90 rounded-2xl p-6 sm:p-10 animate-fade-in max-h-[90vh] overflow-y-auto"
+      >
+        <h2
+          class="auth-form-heading text-2xl sm:text-3xl font-extrabold bg-gradient-to-r from-purple-700 via-purple-500 to-pink-400 bg-clip-text text-transparent mb-6 animate-fade-in-down"
+        >
+          Registration
+        </h2>
+        <label for="registration-form-name" class="auth-form-label"
+          >Enter your name</label
+        >
+        <input
+          id="registration-form-name"
+          type="text"
+          class="auth-form-input"
+          placeholder="John Doe"
+          name="name"
+        />
+        <label for="registration-form-email" class="auth-form-label"
+          >Enter your email</label
+        >
+        <input
+          id="registration-form-email"
+          type="email"
+          class="auth-form-input"
+          placeholder="example@example.com"
+          name="email"
+        />
+        <label for="registration-form-number" class="auth-form-label"
+          >Enter your phone number</label
+        >
+        <div class="flex items-baseline">
+          <p class="mr-1 text-purple-900 font-semibold text-lg">+380</p>
+          <input
+            id="registration-form-number"
+            type="tel"
+            class="auth-form-input w-full"
+            placeholder="XX-XXX-XXXX"
+            name="phoneNumber"
+          />
+        </div>
+        <label for="registration-form-password" class="auth-form-label"
+          >Enter your password</label
+        >
+        <input
+          id="registration-form-password"
+          type="password"
+          class="auth-form-input"
+          placeholder="12345qwerty"
+          name="password"
+        />
+        <label for="registration-form-confirm-password" class="auth-form-label"
+          >Confirm your password</label
+        >
+        <input
+          id="registration-form-confirm-password"
+          type="password"
+          class="auth-form-input"
+          placeholder="12345qwerty"
+          name="confirmPassword"
+        />
+        <div
+          class="flex flex-col sm:flex-row gap-y-4 sm:gap-y-0 justify-between items-center mt-4"
+        >
+          <button
+            type="button"
+            class="text-base sm:text-lg text-purple-600 font-semibold cursor-pointer hover:underline active:opacity-50 transition-all duration-200 mb-4 sm:mb-0"
+            id="switch-to-login"
+          >
+            Already has an account?
+          </button>
+          <div
+            class="flex flex-col sm:flex-row gap-3 w-full sm:w-auto mt-2 sm:mt-0"
+          >
+            <button
+              id="register-return-btn"
+              type="button"
+              class="auth-form-btn"
+            >
+              Back
+            </button>
+            <button class="auth-form-btn">Register</button>
+          </div>
+        </div>
+        <ul id="reg-form-error-list" class="mt-4"></ul>
+      </form>
+
+      <!-- LOGIN FORM -->
+      <form
+        id="login-form"
+        class="auth-form hidden-element max-w-lg w-full shadow-2xl bg-white/90 border-0 sm:border-4 sm:bg-purple-300/90 rounded-2xl p-6 sm:p-10 animate-fade-in max-h-[90vh] overflow-y-auto"
+      >
+        <h2
+          class="auth-form-heading text-2xl sm:text-3xl font-extrabold bg-gradient-to-r from-purple-700 via-purple-500 to-pink-400 bg-clip-text text-transparent mb-6 animate-fade-in-down"
+        >
+          Authorization
+        </h2>
+        <label for="login-form-email" class="auth-form-label">Email</label>
+        <input
+          id="login-form-email"
+          type="email"
+          class="auth-form-input"
+          placeholder="example@example.com"
+          name="email"
+        />
+        <label for="login-form-password" class="auth-form-label"
+          >Password</label
+        >
+        <input
+          id="login-form-password"
+          type="password"
+          class="auth-form-input"
+          placeholder="your password"
+          name="password"
+        />
+        <div
+          class="flex flex-col sm:flex-row gap-y-4 sm:gap-y-0 justify-between items-center mt-4"
+        >
+          <button
+            type="button"
+            class="text-base sm:text-lg text-purple-600 font-semibold cursor-pointer hover:underline active:opacity-50 transition-all duration-200 mb-4 sm:mb-0"
+            id="switch-to-registration"
+          >
+            Do not have an account yet?
+          </button>
+          <div
+            class="flex flex-col sm:flex-row gap-3 w-full sm:w-auto mt-2 sm:mt-0"
+          >
+            <button id="login-return-btn" type="button" class="auth-form-btn">
+              Back
+            </button>
+            <button class="auth-form-btn">Login</button>
+          </div>
+        </div>
+        <ul id="login-form-error-list" class="mt-4"></ul>
+      </form>
+    </div>
+
+    <!-- APP CONTENT -->
+    <div id="app-content" class="h-screen flex flex-col">
+      <header
+        class="flex flex-col sm:flex-row items-center justify-between px-4 sm:px-8 py-4 bg-purple-300 gap-y-4 sm:gap-y-0 shadow-md animate-fade-in-down"
+      >
+        <h2
+          class="text-3xl sm:text-4xl font-extrabold uppercase tracking-wider animate-fade-in-up bg-gradient-to-r from-purple-700 via-purple-500 to-pink-400 bg-clip-text text-transparent drop-shadow-lg text-center sm:text-left transition-all duration-500"
+        >
+          Dummy Site
+        </h2>
+        <button
+          id="authBtn"
+          class="text-xl sm:text-2xl font-bold cursor-pointer px-8 py-3 rounded-2xl bg-gradient-to-r from-purple-500 via-purple-400 to-pink-400 text-white shadow-xl transition-all duration-300 hover:bg-gradient-to-l hover:from-pink-400 hover:to-purple-700 hover:scale-105 focus:ring-4 focus:ring-purple-300 animate-fade-in-up"
+        >
+          Log In
+        </button>
+      </header>
+      <main id="main-content" class="flex grow flex-col p-8"></main>
+    </div>
+
+    <script type="module" src="src/js/app.js"></script>
+  </body>
+</html>

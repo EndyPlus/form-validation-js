@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+/* AUTH FORM STYLES  */
+
+.auth-form {
+  @apply flex flex-col min-w-[70%] sm:min-w-[30rem] py-4 px-8 sm:py-6 sm:px-14 border-4 rounded-lg gap-y-1 sm:gap-y-2 bg-purple-300 border-purple-400 shadow-xl transition-all duration-500 ease-in-out animate-fade-in;
+}
+
+.auth-form-heading {
+  @apply mb-4 text-xl text-center font-bold uppercase text-purple-900 animate-fade-in-down;
+}
+
+.auth-form-label {
+  @apply text-lg text-purple-700 font-semibold transition-colors duration-300;
+}
+
+.auth-form-input {
+  @apply py-1 pl-2 mb-2 text-base bg-purple-100 outline-purple-600 border-2 border-transparent text-purple-800 rounded-sm opacity-80 focus:opacity-100 placeholder:text-purple-500 transition-all duration-300 focus:scale-105 focus:ring-2 focus:ring-purple-400;
+}
+
+.auth-form-btn {
+  @apply cursor-pointer text-lg text-white font-semibold hover:opacity-80 hover:scale-105 active:text-white transition-all duration-200 shadow-md hover:shadow-lg;
+}
+
+.hidden-element {
+  @apply hidden;
+}
+
+/* FOR VALIDATION ERRORS */
+
+.auth-form-label-error {
+  @apply text-red-500 animate-shake;
+}
+
+.auth-form-input-error {
+  @apply border-red-500 outline-red-500 animate-shake;
+}
+
+.auth-form-error-li {
+  @apply mb-1 text-sm text-red-500 font-semibold tracking-wider animate-fade-in-up;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in {
+  animation: fade-in 0.5s ease;
+}
+@keyframes fade-in-down {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in-down {
+  animation: fade-in-down 0.5s ease;
+}
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in-up {
+  animation: fade-in-up 0.5s ease;
+}
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20%,
+  60% {
+    transform: translateX(-8px);
+  }
+  40%,
+  80% {
+    transform: translateX(8px);
+  }
+}
+.animate-shake {
+  animation: shake 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
