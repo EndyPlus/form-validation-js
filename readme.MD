@@ -19,6 +19,12 @@ Create an HTML registration form with fields for name, email, password, and phon
 ```
 git clone https://github.com/EndyPlus/form-validation-js.git
 ```
+#### Move to project's directory:
+
+```
+cd form-validation-js
+```
+
 
 #### Front-end:
 
